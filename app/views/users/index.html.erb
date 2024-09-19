@@ -4,11 +4,16 @@
 
 <div id="users">
   <% @users.each do |user| %>
-    <%= render user %>
-    <p>
-      <%= link_to "Show this user", user %>
-    </p>
+    <h2><%= user.name %></h2>
+    <p>Address: <%= user.address.city %>, <%= user.address.state %></p>
+    <h3>Posts:</h3>
+    <ul>
+      <% user.posts.each do |post| %>
+        <li><%= post.body %></li>
+      <% end %>
+    </ul>
   <% end %>
 </div>
+
 
 <%= link_to "New user", new_user_path %>
