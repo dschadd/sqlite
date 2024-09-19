@@ -20,7 +20,7 @@ puts "Creating users, posts, and addresses..."
     state: Faker::Address.state
   )
 
-  100.times do
+  1000.times do
     Post.create!(
       user: user,
       body: Faker::Lorem.paragraph(sentence_count: 2, supplemental: true, random_sentences_to_add: 4)
